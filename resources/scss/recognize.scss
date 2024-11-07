@@ -1,0 +1,204 @@
+$color-primary: #002c6b;
+
+@mixin button {
+    background: #5555;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+@mixin hr {
+    border: none;
+    height: 0.5px;
+    background-color: #5555;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    line-height: 1.5;
+    font-family: inherit;
+    color: $color-primary;
+
+    hr {
+        @include hr;
+    }
+
+    .member {
+        display: flex;
+        gap: 20px;
+
+        .list-member {
+            width: 100%;
+
+            hr {
+                @include hr;
+            }
+
+            .form-search {
+                position: relative;
+
+                input.key-search {
+                    padding: 3px;
+                    border-radius: 5px;
+                    border: 1px solid #5555;
+                    width: 100%;
+                }
+
+                .btn-search {
+                    background: none;
+                    border: none;
+                    color: #5555;
+                    position: absolute;
+                    top: 5px;
+                    left: 0;
+                }
+            }
+
+            .list {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+
+                .info-member {
+                    display: flex;
+                    gap: 10px;
+
+                    .image img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+
+                    .infomation {
+                        .fullname {
+                            font-weight: bold;
+                        }
+
+                        .position {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .select {
+                    align-content: center;
+                }
+            }
+        }
+
+        .member-recognize {
+            width: 100%;
+
+            .member-selected {
+                text-align: center;
+
+                .image-member-selected img {
+                    width: 250px;
+                }
+
+                .infomation-member-selected {
+                    .fullname {
+                        font-weight: bold;
+                    }
+
+                    .position {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .badge {
+        .list-badge {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        .badgeid {
+            border: 1px solid #5555;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+            color: #333;
+            
+            .image-badge img {
+                width: 70px;
+            }
+            
+        }
+        
+        /* CSS cho trạng thái checked */
+        input[type="radio"]:checked ~.badge-id {
+            background-color: #60aded;
+            border-color: #2196f3;
+            color: #000;
+        }        
+    }
+
+    .content-recognize {
+        padding-right: 5px;
+
+        .content {
+            width: 100%;
+            height: 70px;
+        }
+    }
+
+    .button-recognize {
+        text-align: right;
+
+        .cancel {
+            @include button;
+        }
+
+        .recognize {
+            @include button;
+            background: $color-primary;
+            color: #fff;
+        }
+    }
+}
+
+/* Responsive cho màn hình 992px */
+@media (max-width: 992px) {
+    body {
+        .badge {
+            .list-badge {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+/* Responsive cho màn hình 768px */
+@media (max-width: 768px) {
+    body {
+
+        .member {
+            display: block;
+        }
+
+        .badge {
+            .list-badge {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+/* Responsive cho màn hình 480px */
+@media (max-width: 576px) {
+    body {
+        .badge {
+            .list-badge {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}
