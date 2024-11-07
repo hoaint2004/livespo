@@ -9,4 +9,9 @@ class RecognizeController extends Controller
     public function index(){
         return view('recognize');
     }
+
+    public function post_recognize(){
+        return view('post-recognize');
+    }
+
 }

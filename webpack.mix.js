@@ -16,6 +16,11 @@ let scss = [
         from: "resources/scss/recognize.scss",
         to: "public/scss/recognize.css",
     },
+
+    {
+        from: "resources/scss/post-recognize.scss",
+        to: "public/scss/post-recognize.css",
+    }
 ];
 
 // Vòng lặp để build từng file SCSS

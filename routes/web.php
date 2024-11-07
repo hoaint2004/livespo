@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/recognize', [RecognizeController::class, 'index'])->name('recognize');
+Route::get('/post-recognize', [RecognizeController::class, 'post_recognize'])->name('post_recognize');
