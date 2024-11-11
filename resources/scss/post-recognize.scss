@@ -1,65 +1,177 @@
 body {
     margin: 0;
-    padding: 10px;
+    padding: 0;
     line-height: 1.5;
     color: #002c6b;
-    justify-items: center;
-    width: 100%;
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 
-    .info-badge {
-        display: flex;
-        gap: 10px;
-
-        .img-member img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-        .info-status-badge {
-            .time-recognize span {
-                color: #555;
-            }
-        }
-    }
-
-    .img-recognize {
-
+    .container {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        gap: 20px;
         position: relative;
 
-        .img-bg img {
-            width: 100%;
-        }
+        .sidebar {
+            // width: 250px;
+            height: 100vh;
+            /* Chiều cao toàn màn hình */
+            background-color: #ffffff;
+            padding: 20px;
+            border-right: 1px solid #e0e0e0;
 
-        .congrats-badge {
-            display: grid;
-            justify-items: center;
-            position: absolute;
-            bottom: -115px;
-            width: 100%;
+            .branch {
+                display: flex;
+                justify-content: space-between;
 
-            .img-badge {
-                position: relative;
-                width: 160px;
-                height: 125px;
-                background-color: #55555555;
-                clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-                padding: 10px;
-                margin-bottom: 10px;
+                h1 {
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #555;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                }
 
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: fill;
-                    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-                    background-color: white;
+
+                i {
+                    font-size: 20px;
+                    margin-left: auto;
+                    color: #333;
+                    cursor: pointer;
+                    align-content: center;
                 }
             }
-            .text-congrats{
-                text-align: center;
+
+            .navbar-nav {
+                margin: 0;
+                padding: 0;
+
+                .menu-title {
+                    font-size: 14px;
+                    color: #888;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                }
+
+                .nav-item {
+                    list-style: none;
+                    margin: 10px 0;
+
+                    .nav-link {
+                        display: flex;
+                        align-items: center;
+                        font-size: 16px;
+                        color: #333;
+                        text-decoration: none;
+                        padding: 10px;
+                        border-radius: 8px;
+                        transition: background-color 0.3s;
+
+                        i {
+                            margin-right: 10px;
+                            color: #555;
+                        }
+
+                    }
+
+                    .nav-link:hover {
+                        background-color: #f5f5f5;
+                    }
+
+                    .nav-link.active {
+                        background-color: #002c6b;
+                        color: #ffffff;
+                    }
+
+                    .nav-link.active i {
+                        color: #ffffff;
+                    }
+                }
             }
         }
 
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background-color: #fff;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+
+        }
+
+        .post-recognize {
+            background-color: #fff;
+            margin-bottom: 20px;
+            /* Khoảng cách giữa các bài viết */
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+            .info-badge {
+                display: flex;
+                gap: 10px;
+
+                .img-member img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+
+                .info-status-badge {
+                    .time-recognize span {
+                        color: #555;
+                    }
+                }
+            }
+
+            .img-recognize {
+                position: relative;
+                margin-top: 10px;
+
+                .img-bg img {
+                    width: 100%;
+                    height: 400px;
+                }
+
+                .congrats-badge {
+                    display: grid;
+                    justify-items: center;
+                    position: absolute;
+                    bottom: -115px;
+                    width: 100%;
+
+                    .img-badge {
+                        width: 160px;
+                        height: 125px;
+                        background-color: #55555555;
+                        clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: fill;
+                        }
+                    }
+
+                    .text-congrats {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .content-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+        }
 
 
     }

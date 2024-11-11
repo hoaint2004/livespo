@@ -16,7 +16,7 @@
     "postcss": "^8.1.14",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.80.6",
-    "sass-loader": "^12.1.0",
+    "sass-loader": "^16.0.3",
     "webpack": "^5.96.1"
   },
   "name": "livespo",
