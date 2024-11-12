@@ -16,7 +16,7 @@ body .container {
   position: relative;
 }
 body .container .sidebar {
-  height: 100vh;
+  min-height: 100%;
   /* Chiều cao toàn màn hình */
   background-color: #ffffff;
   padding: 20px;
@@ -90,18 +90,17 @@ body .container .content {
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  background-color: #fff;
-  max-height: 90vh;
+  padding: 10px 0 10px 0;
   overflow-y: auto;
-  border: 1px solid #ccc;
   border-radius: 8px;
 }
 body .container .post-recognize {
   background-color: #fff;
   margin-bottom: 20px;
   /* Khoảng cách giữa các bài viết */
-  padding: 10px;
+  min-height: 600px;
+  margin-bottom: 20px;
+  padding: 10px 0;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -110,6 +109,7 @@ body .container .post-recognize .info-badge {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+  padding-left: 10px;
 }
 body .container .post-recognize .info-badge .img-member img {
   width: 50px;
@@ -132,7 +132,7 @@ body .container .post-recognize .img-recognize .congrats-badge {
   display: grid;
   justify-items: center;
   position: absolute;
-  bottom: -115px;
+  bottom: -100px;
   width: 100%;
 }
 body .container .post-recognize .img-recognize .congrats-badge .img-badge {
