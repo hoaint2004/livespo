@@ -14,12 +14,11 @@ body {
         position: relative;
 
         .sidebar {
-            // width: 250px;
             min-height: 100%;
-            /* Chiều cao toàn màn hình */
             background-color: #ffffff;
             padding: 20px;
             border-right: 1px solid #e0e0e0;
+            overflow-x: auto;
 
             .branch {
                 display: flex;
@@ -94,6 +93,8 @@ body {
 
         .content {
             display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */        
             flex-direction: column;
             padding: 10px 0 10px 0;
             overflow-y: auto;
@@ -102,6 +103,7 @@ body {
         }
 
         .post-recognize {
+            width: 700px;
             background-color: #fff;
             margin-bottom: 20px;
             /* Khoảng cách giữa các bài viết */
@@ -174,4 +176,49 @@ body {
 
 
     }
+
+@media (max-width: 992px) {
+        .container {
+            grid-template-columns: 25% 75%;
+
+            .post-recognize {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            grid-template-columns: 1fr;
+        
+            .sidebar{
+                min-height: 100px;
+            }
+            .content {
+                padding: 0 20px;
+            }
+        }
+
+        .post-recognize {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .sidebar {
+            min-height: 100px;
+        }
+        .post-recognize {
+            padding: 10px;
+            .img-recognize .img-bg img {
+                height: 300px;
+            }
+
+            .info-badge .img-member img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
 }

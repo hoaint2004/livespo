@@ -13,6 +13,7 @@ $color-primary: #002c6b;
     height: 0.5px;
     background-color: #5555;
 }
+
 .content{
     overflow-x: hidden;
     hr {
@@ -172,27 +173,39 @@ $color-primary: #002c6b;
 
 /* Responsive cho màn hình 768px */
 @media (max-width: 768px) {
-    body {
-
+    .content {
         .member {
-            display: block;
+            display: block; /* Chuyển về dạng block để xếp chồng các phần tử */
         }
 
         .badge {
             .list-badge {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr); /* Chia thành 2 cột cho màn hình nhỏ */
             }
+        }
+
+        .button-recognize {
+            text-align: center; /* Căn giữa các nút */
         }
     }
 }
 
-/* Responsive cho màn hình 480px */
+/* Responsive cho màn hình dưới 576px */
 @media (max-width: 576px) {
-    body {
+    .content {
         .badge {
             .list-badge {
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: repeat(1, 1fr); /* Chuyển về 1 cột cho màn hình nhỏ nhất */
             }
+        }
+
+        .member .member-recognize .member-selected .image-member-selected img {
+            width: 100px; /* Giảm kích thước ảnh để vừa màn hình nhỏ nhất */
+        }
+
+        .member .list-member .form-search input.key-search {
+            padding: 5px;
+            width: 100%;
         }
     }
 }
